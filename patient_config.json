@@ -1,0 +1,31 @@
+{
+    "patients": [
+        {
+            "type": "A",
+            "arrival_rate": {"distribution": "uniform", "params": [0, 1]},
+            "diagnoses": [
+                {"diagnosis": "A1", "op_duration": null, "nursing_duration": {"distribution": "normal", "params": [4, 0.5]}, "complications_proba": 0.01},
+                {"diagnosis": "A2", "op_duration": {"distribution": "normal", "params": [1, 0.25]}, "nursing_duration": {"distribution": "normal", "params": [8, 2]}, "complications_proba": 0.01},
+                {"diagnosis": "A3", "op_duration": {"distribution": "normal", "params": [2, 0.5]}, "nursing_duration": {"distribution": "normal", "params": [16, 2]}, "complications_proba": 0.02},
+                {"diagnosis": "A4", "op_duration": {"distribution": "normal", "params": [4, 0.5]}, "nursing_duration": {"distribution": "normal", "params": [16, 2]}, "complications_proba": 0.02}
+            ]
+        },
+        {
+            "type": "B",
+            "arrival_rate": {"distribution": "uniform", "params": [0, 1]},
+            "diagnoses": [
+                {"diagnosis": "B1", "op_duration": null, "nursing_duration": {"distribution": "normal", "params": [8, 2]}, "complications_proba": 0.001},
+                {"diagnosis": "B2", "op_duration": null, "nursing_duration": {"distribution": "normal", "params": [16, 2]}, "complications_proba": 0.01},
+                {"diagnosis": "B3", "op_duration": {"distribution": "normal", "params": [4, 0.5]}, "nursing_duration": {"distribution": "normal", "params": [16, 4]}, "complications_proba": 0.02},
+                {"diagnosis": "B4", "op_duration": {"distribution": "normal", "params": [4, 1]}, "nursing_duration": {"distribution": "normal", "params": [16, 4]}, "complications_proba": 0.02}
+            ]
+        },
+        {
+            "type": "EM",
+            "arrival_rate": {"distribution": "exponential", "params": [1]},
+            "diagnoses": [
+                {"diagnosis": "EM", "op_duration": null, "nursing_duration": null, "complications_proba": null}
+            ]
+        }
+    ]
+}
