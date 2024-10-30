@@ -138,3 +138,17 @@ def patient_release(simulator):
     
 def patient_replan(simulator):
     print("Patient Replan")
+    patient_type = bottle.request.forms.patient_type
+    patient_diagnosis = bottle.request.forms.patient_diagnosis
+    replan_time = float(bottle.request.forms.arrival_time)
+    simulator.events.put((replan_time, SimulationEvent(type = EventType.REPLAN_PATIENT,
+                                                       start = replan_time, 
+                                                       patient_id = patient_id,
+                                                       patient_type = patient_type, 
+                                                       patient_diagnosis = patient_diagnosis 
+                                                       )))
+    return bottle.HTTPResponse(
+        json.dumps({'message': f'Patient {patient_id} replanned'}),
+        status=200,
+        headers={'content-type': 'application/json'}
+    )
